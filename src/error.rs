@@ -1,28 +1,29 @@
+use std::io::Error;
 use rodio::decoder::DecoderError;
 use rodio::{PlayError, StreamError};
 
 #[derive(thiserror::Error, Debug)]
 pub enum SingerError {
     #[error("io: {0}")]
-    IOError(
+    IO(
         #[source]
         #[from]
-        std::io::Error,
+        Error,
     ),
     #[error("decode: {0}")]
-    RodioDecoderError(
+    Decoder(
         #[source]
         #[from]
         DecoderError,
     ),
     #[error("stream: {0}")]
-    RodioStreamError(
+    Stream(
         #[source]
         #[from]
         StreamError,
     ),
     #[error("play: {0}")]
-    RodioPlayError(
+    Play(
         #[source]
         #[from]
         PlayError,
