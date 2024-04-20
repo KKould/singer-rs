@@ -9,5 +9,10 @@ Simple command line music player
 - `exit` \ `quit`: Quit the programs
 
 ## example
-`play "free_music/Drop Point.mp3"`
-`play "free_music/sweet smoothie.mp3"`
+`cargo run`
+
+```shell
+play "free_music/Drop Point.mp3"
+
+play "free_music/sweet smoothie.mp3"
+```
